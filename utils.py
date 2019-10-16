@@ -14,9 +14,6 @@ from sqlalchemy import create_engine
 from cvxopt import solvers
 from cvxopt import matrix
 
-market_engine = create_engine(r'mysql+pymysql://lhxz:postfundlhxz@10.1.101.32:3306/market')
-market_conn = market_engine.connect()
-
 def read_data(file_path):
     data = pd.read_csv(file_path)
     data['date'] = pd.to_datetime(data['date'])
